@@ -1,0 +1,1001 @@
+{
+	"info": {
+		"_postman_id": "32424532-518e-41d9-81be-123027454fd7",
+		"name": "SM_Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\",\n    \"password\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}api/auth/token/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"auth",
+								"token",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\":\"admin\",\n    \"password\":\"admin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}api/auth/token/",
+									"host": [
+										"{{localhost}}api"
+									],
+									"path": [
+										"auth",
+										"token",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jul 2024 15:34:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "483"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyMjAwODA0OSwiaWF0IjoxNzIxOTIxNjQ5LCJqdGkiOiI0ZmIwOGFiMzVhMTg0ODI2YTdlNGQ4ODJhMGRkZjE4NCIsInVzZXJfaWQiOjF9.P6t2Q1w3tSpDzkfCleppPEklId8ubbnJVjVQCPqWNd8\",\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxOTIzNDQ5LCJpYXQiOjE3MjE5MjE2NDksImp0aSI6IjM2NzNhZjgwZDUzZDRhNWZiYTAzY2ExMzBhMmE0Y2Q4IiwidXNlcl9pZCI6MX0.n6j3YmWaINF1wDEq9q99L9QSgmzE_ADUQ138PVSbxF8\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Get Tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIyMDAwNTEwLCJpYXQiOjE3MjE5OTg3MTAsImp0aSI6IjRlZDBkYzI1Y2IxNjRjNWNhYmUwNjM5NTU2NzVjMjE0IiwidXNlcl9pZCI6MX0.E8cDYoT8ohtTqZ8nQQbsC63qrwS0SXbWgtpYy12vqYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}api/tasks/",
+					"host": [
+						"{{localhost}}api"
+					],
+					"path": [
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Tasks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/tasks/?limit=2&offset=2",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"tasks",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "offset",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 25 Jul 2024 21:34:42 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1029"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 10,\n    \"next\": \"http://0.0.0.0:8000/api/tasks/?limit=2&offset=4\",\n    \"previous\": \"http://0.0.0.0:8000/api/tasks/?limit=2\",\n    \"results\": [\n        {\n            \"id\": 14,\n            \"status\": \"PLANNED\",\n            \"description\": \"asfafasafasf\",\n            \"created_at\": \"2024-07-25T18:54:23.207482Z\",\n            \"executed_at\": null,\n            \"scheduled_date\": \"2024-12-07\",\n            \"author\": 1,\n            \"executor\": 1,\n            \"planned_spare_parts\": [\n                {\n                    \"id\": 23,\n                    \"planned_count\": 2,\n                    \"in_stock\": 0,\n                    \"spare_part\": {\n                        \"id\": 1,\n                        \"name\": \"Part 1\",\n                        \"measurement_units\": \"count\",\n                        \"price\": \"1123.00\"\n                    }\n                },\n                {\n                    \"id\": 24,\n                    \"planned_count\": 10,\n                    \"in_stock\": 0,\n                    \"spare_part\": {\n                        \"id\": 3,\n                        \"name\": \"part3\",\n                        \"measurement_units\": \"count\",\n                        \"price\": \"1234.00\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 15,\n            \"status\": \"PLANNED\",\n            \"description\": \"asfafasafasf\",\n            \"created_at\": \"2024-07-25T19:07:33.559877Z\",\n            \"executed_at\": null,\n            \"scheduled_date\": \"2024-12-07\",\n            \"author\": 1,\n            \"executor\": 1,\n            \"planned_spare_parts\": [\n                {\n                    \"id\": 25,\n                    \"planned_count\": 2,\n                    \"in_stock\": 0,\n                    \"spare_part\": {\n                        \"id\": 1,\n                        \"name\": \"Part 1\",\n                        \"measurement_units\": \"count\",\n                        \"price\": \"1123.00\"\n                    }\n                },\n                {\n                    \"id\": 26,\n                    \"planned_count\": 10,\n                    \"in_stock\": 0,\n                    \"spare_part\": {\n                        \"id\": 3,\n                        \"name\": \"part3\",\n                        \"measurement_units\": \"count\",\n                        \"price\": \"1234.00\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Task Status Types",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIyMDAwNTEwLCJpYXQiOjE3MjE5OTg3MTAsImp0aSI6IjRlZDBkYzI1Y2IxNjRjNWNhYmUwNjM5NTU2NzVjMjE0IiwidXNlcl9pZCI6MX0.E8cDYoT8ohtTqZ8nQQbsC63qrwS0SXbWgtpYy12vqYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}api/tasks/statuses",
+					"host": [
+						"{{localhost}}api"
+					],
+					"path": [
+						"tasks",
+						"statuses"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Status Types",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/tasks/statuses",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"tasks",
+								"statuses"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 26 Jul 2024 13:23:40 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    \"PLANNED\",\n    \"IN_PROGRESS\",\n    \"UNDER_REVIEW\",\n    \"DONE\"\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIyMDAwNTEwLCJpYXQiOjE3MjE5OTg3MTAsImp0aSI6IjRlZDBkYzI1Y2IxNjRjNWNhYmUwNjM5NTU2NzVjMjE0IiwidXNlcl9pZCI6MX0.E8cDYoT8ohtTqZ8nQQbsC63qrwS0SXbWgtpYy12vqYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}api/tasks/:pk/",
+					"host": [
+						"{{localhost}}api"
+					],
+					"path": [
+						"tasks",
+						":pk",
+						""
+					],
+					"variable": [
+						{
+							"key": "pk",
+							"value": "55"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Task",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/tasks/:pk/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"tasks",
+								":pk",
+								""
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "55"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 26 Jul 2024 13:24:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "467"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 55,\n    \"status\": \"PLANNED\",\n    \"description\": \"task 2\",\n    \"created_at\": \"2024-07-26T13:22:56.549884Z\",\n    \"executed_at\": null,\n    \"scheduled_date\": \"2024-10-08\",\n    \"author\": 1,\n    \"executor\": 1,\n    \"planned_spare_parts\": [\n        {\n            \"id\": 154,\n            \"planned_count\": 10,\n            \"in_stock\": 0,\n            \"spare_part\": {\n                \"id\": 1,\n                \"name\": \"Підшипник A\",\n                \"measurement_units\": \"count\",\n                \"price\": \"1123.00\"\n            }\n        },\n        {\n            \"id\": 155,\n            \"planned_count\": 40,\n            \"in_stock\": 0,\n            \"spare_part\": {\n                \"id\": 4,\n                \"name\": \"Втулка B\",\n                \"measurement_units\": \"count\",\n                \"price\": \"1111.00\"\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Edit Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIyMDAwNTEwLCJpYXQiOjE3MjE5OTg3MTAsImp0aSI6IjRlZDBkYzI1Y2IxNjRjNWNhYmUwNjM5NTU2NzVjMjE0IiwidXNlcl9pZCI6MX0.E8cDYoT8ohtTqZ8nQQbsC63qrwS0SXbWgtpYy12vqYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Some desc\",\n    \"executor\":1,\n    \"scheduled_date\":\"2024-12-10\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}api/tasks/:pk/",
+					"host": [
+						"{{localhost}}api"
+					],
+					"path": [
+						"tasks",
+						":pk",
+						""
+					],
+					"variable": [
+						{
+							"key": "pk",
+							"value": "55"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Edit Task",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Some desc\",\n    \"executor\":1,\n    \"scheduled_date\":\"2024-12-10\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}api/tasks/:pk/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"tasks",
+								":pk",
+								""
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "55"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 26 Jul 2024 13:24:57 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "185"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 55,\n    \"description\": \"Some desc\",\n    \"scheduled_date\": \"2024-12-10\",\n    \"executor\": 1,\n    \"author\": 1,\n    \"planned_spare_parts\": [\n        {\n            \"spare_part\": 1,\n            \"planned_count\": 10\n        },\n        {\n            \"spare_part\": 4,\n            \"planned_count\": 40\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Edit Planned Spare Part",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxOTM1MTEzLCJpYXQiOjE3MjE5MzMzMTMsImp0aSI6IjUzOTQxMmFhZGUyZjQ2OWM4NzcwZTlhNzk4YmE3ZGRiIiwidXNlcl9pZCI6MX0.I31pyq_Vu5aTQaAs1Qd1tEHoqUge49ry-L0MbaMd51E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"228\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}api/tasks/:pk/",
+					"host": [
+						"{{localhost}}api"
+					],
+					"path": [
+						"tasks",
+						":pk",
+						""
+					],
+					"variable": [
+						{
+							"key": "pk",
+							"value": "9"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Edit Planned Spare Part",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"planned_spare_parts\":[\n        {\n           \"spare_part\":3,\n           \"planned_count\" :2\n        },\n        {\n           \"spare_part\":2,\n           \"planned_count\" :15\n        }\n    ]}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}api/tasks/:pk/planned-spare-part",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"tasks",
+								":pk",
+								"planned-spare-part"
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "55"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 26 Jul 2024 13:25:25 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "PATCH, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "96"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"planned_spare_parts\": [\n        {\n            \"spare_part\": 3,\n            \"planned_count\": 2\n        },\n        {\n            \"spare_part\": 2,\n            \"planned_count\": 15\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Change Task Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxOTM1MTEzLCJpYXQiOjE3MjE5MzMzMTMsImp0aSI6IjUzOTQxMmFhZGUyZjQ2OWM4NzcwZTlhNzk4YmE3ZGRiIiwidXNlcl9pZCI6MX0.I31pyq_Vu5aTQaAs1Qd1tEHoqUge49ry-L0MbaMd51E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"228\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}api/tasks/:pk/",
+					"host": [
+						"{{localhost}}api"
+					],
+					"path": [
+						"tasks",
+						":pk",
+						""
+					],
+					"variable": [
+						{
+							"key": "pk",
+							"value": "9"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Change Task Status",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"IN_PROGRESS\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}api/tasks/:pk/change-status",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"tasks",
+								":pk",
+								"change-status"
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 25 Jul 2024 21:33:03 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, PATCH, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "24"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"IN_PROGRESS\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}api/tasks",
+					"host": [
+						"{{localhost}}api"
+					],
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Task",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\":\"hello\",\n    \"scheduled_date\":\"2024-12-07\",\n    \"executor\":\"1\",\n    \"planned_spare_parts\":[\n        {\n           \"spare_part\":1,\n           \"planned_count\" :2\n        },\n        {\n           \"spare_part\":3,\n           \"planned_count\" :10\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}api/tasks/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"tasks",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 25 Jul 2024 22:00:43 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "161"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"description\": \"hello\",\n    \"scheduled_date\": \"2024-12-07\",\n    \"executor\": 1,\n    \"planned_spare_parts\": [\n        {\n            \"spare_part\": 1,\n            \"planned_count\": 2\n        },\n        {\n            \"spare_part\": 3,\n            \"planned_count\": 10\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxOTMzMzAxLCJpYXQiOjE3MjE5MzE1MDEsImp0aSI6ImU2M2Y3MGQ2NWRhYzQ4YmFhYjIxOGQyZmM0NTgwNmY2IiwidXNlcl9pZCI6MX0.hRKc3JPdZ4d6G-jGLGLheVCj9tUdIRvU9Y8lXaFUkYk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}api/task/:pk",
+					"host": [
+						"{{localhost}}api"
+					],
+					"path": [
+						"task",
+						":pk"
+					],
+					"query": [
+						{
+							"key": "\\",
+							"value": "5",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "pk",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Task",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}api/tasks/:pk/",
+							"host": [
+								"{{localhost}}api"
+							],
+							"path": [
+								"tasks",
+								":pk",
+								""
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 25 Jul 2024 18:55:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.4"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "http://0.0.0.0:8000/"
+		}
+	]
+}
