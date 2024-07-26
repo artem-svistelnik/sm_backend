@@ -20,3 +20,10 @@ stop:
 
 cmd:
 	docker compose run $(runargs)
+
+dump:
+	docker compose exec database pg_dump -U postgres -d postgres -f /dump.sql
+	docker compose cp database:/dump.sql ./dump.sql
+
+load:
+	cat dump.sql | docker compose exec -T -u postgres database psql --port=5432

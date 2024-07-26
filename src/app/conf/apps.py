@@ -7,7 +7,5 @@ DEFAULT_APPS = (
     "django.contrib.staticfiles",
 )
 DEPENDENCIES = ("rest_framework", "rest_framework_simplejwt")
-MODULES = (
-
-)
+MODULES = ("tasks",)
 INSTALLED_APPS = MODULES + DEPENDENCIES + DEFAULT_APPS
